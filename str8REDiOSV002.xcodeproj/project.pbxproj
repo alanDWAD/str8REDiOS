@@ -199,6 +199,7 @@
 				TargetAttributes = {
 					B2B8FB171DFAB77100145179 = {
 						CreatedOnToolsVersion = 8.1;
+						DevelopmentTeam = 3S6A8F8KW5;
 						ProvisioningStyle = Automatic;
 					};
 					B2B8FB2D1DFAB77100145179 = {
@@ -422,6 +423,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				DEVELOPMENT_TEAM = 3S6A8F8KW5;
 				INFOPLIST_FILE = str8REDiOSV002/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = BTR.str8REDiOSV002;
@@ -434,6 +436,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				DEVELOPMENT_TEAM = 3S6A8F8KW5;
 				INFOPLIST_FILE = str8REDiOSV002/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = BTR.str8REDiOSV002;
