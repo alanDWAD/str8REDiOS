@@ -3,7 +3,8 @@
 //  str8REDiOSV002
 //
 //  Created by Alan Tingey on 09/12/2016.
-//  Copyright © 2016 Alan Tingey. All rights reserved.
+//  Copyright © 2017 Alan Tingey. All rights reserved.
+//  Powered by kOS
 //
 
 import UIKit
@@ -12,7 +13,6 @@ import UIKit
 class AppDelegate: UIResponder, UIApplicationDelegate {
 
     var window: UIWindow?
-
 
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplicationLaunchOptionsKey: Any]?) -> Bool {
         // Override point for customization after application launch.
