@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		B2B5E28F1ED5ACD000E461BD /* UserNotifications.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B2B5E28E1ED5ACD000E461BD /* UserNotifications.framework */; settings = {ATTRIBUTES = (Required, ); }; };
 		B2B8FB1C1DFAB77100145179 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = B2B8FB1B1DFAB77100145179 /* AppDelegate.swift */; };
 		B2B8FB1E1DFAB77100145179 /* FirstViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B2B8FB1D1DFAB77100145179 /* FirstViewController.swift */; };
 		B2B8FB201DFAB77100145179 /* SecondViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B2B8FB1F1DFAB77100145179 /* SecondViewController.swift */; };
@@ -36,6 +37,8 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		B2B5E28E1ED5ACD000E461BD /* UserNotifications.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UserNotifications.framework; path = System/Library/Frameworks/UserNotifications.framework; sourceTree = SDKROOT; };
+		B2B860AE1ED596F700D20EA2 /* str8REDiOSV002.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = str8REDiOSV002.entitlements; sourceTree = "<group>"; };
 		B2B8FB181DFAB77100145179 /* str8REDiOSV002.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = str8REDiOSV002.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		B2B8FB1B1DFAB77100145179 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		B2B8FB1D1DFAB77100145179 /* FirstViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FirstViewController.swift; sourceTree = "<group>"; };
@@ -58,6 +61,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				B2B5E28F1ED5ACD000E461BD /* UserNotifications.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -78,6 +82,14 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		B2B5E28D1ED5ACD000E461BD /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				B2B5E28E1ED5ACD000E461BD /* UserNotifications.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 		B2B8FB0F1DFAB77100145179 = {
 			isa = PBXGroup;
 			children = (
@@ -85,6 +97,7 @@
 				B2B8FB311DFAB77100145179 /* str8REDiOSV002Tests */,
 				B2B8FB3C1DFAB77100145179 /* str8REDiOSV002UITests */,
 				B2B8FB191DFAB77100145179 /* Products */,
+				B2B5E28D1ED5ACD000E461BD /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -101,6 +114,7 @@
 		B2B8FB1A1DFAB77100145179 /* str8REDiOSV002 */ = {
 			isa = PBXGroup;
 			children = (
+				B2B860AE1ED596F700D20EA2 /* str8REDiOSV002.entitlements */,
 				B2B8FB1B1DFAB77100145179 /* AppDelegate.swift */,
 				B2B8FB1D1DFAB77100145179 /* FirstViewController.swift */,
 				B2B8FB1F1DFAB77100145179 /* SecondViewController.swift */,
@@ -201,6 +215,11 @@
 						CreatedOnToolsVersion = 8.1;
 						DevelopmentTeam = X6EHCRZ9QB;
 						ProvisioningStyle = Automatic;
+						SystemCapabilities = {
+							com.apple.Push = {
+								enabled = 1;
+							};
+						};
 					};
 					B2B8FB2D1DFAB77100145179 = {
 						CreatedOnToolsVersion = 8.1;
@@ -423,10 +442,11 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_ENTITLEMENTS = str8REDiOSV002/str8REDiOSV002.entitlements;
 				DEVELOPMENT_TEAM = X6EHCRZ9QB;
 				INFOPLIST_FILE = str8REDiOSV002/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = BTR.str8REDiOSV007;
+				PRODUCT_BUNDLE_IDENTIFIER = BTR.str8REDiOSV008;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 3.0;
 			};
@@ -436,10 +456,11 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_ENTITLEMENTS = str8REDiOSV002/str8REDiOSV002.entitlements;
 				DEVELOPMENT_TEAM = X6EHCRZ9QB;
 				INFOPLIST_FILE = str8REDiOSV002/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = BTR.str8REDiOSV007;
+				PRODUCT_BUNDLE_IDENTIFIER = BTR.str8REDiOSV008;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 3.0;
 			};
