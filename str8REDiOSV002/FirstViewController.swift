@@ -6,6 +6,8 @@
 //  Copyright © 2017 Alan Tingey. All rights reserved.
 //  Powered by kOS still
 //  snookies mum
+// Alan is gay
+//
 
 import UIKit
 
