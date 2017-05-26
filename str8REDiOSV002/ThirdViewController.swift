@@ -9,20 +9,24 @@
 
 import UIKit
 
-class ThirdViewController: UIViewController {
+class ThirdViewController: UIViewController,UIWebViewDelegate {
+    
     
     @IBOutlet weak var webView: UIWebView!
+    
+    var navTitle:String!
     
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        webView.reload()
+        webView.delegate = self
+        
         
         // Do any additional setup after loading the view, typically from a nib.
         
         let str8REDURL = URL(string: "https://str8red.com/")
         let str8REDURLRequest = URLRequest(url: str8REDURL!)
-        webView.loadRequest(str8REDURLRequest)
+        self.webView.loadRequest(str8REDURLRequest)
         
     }
     
@@ -36,10 +40,25 @@ class ThirdViewController: UIViewController {
         
     }
     
-    override func didReceiveMemoryWarning() {
-        super.didReceiveMemoryWarning()
-        // Dispose of any resources that can be recreated.
+    func webViewDidStartLoad(_ webView: UIWebView) {
+        UIApplication.shared.isNetworkActivityIndicatorVisible = true
     }
     
+    func webViewDidFinishLoad(_ webView: UIWebView) {
+        UIApplication.shared.isNetworkActivityIndicatorVisible = false
+        
+        let loggedIn = self.webView.stringByEvaluatingJavaScript(from: "loggedIn");
+        
+        let alertController = UIAlertController(title: "iOScreator", message:
+            loggedIn, preferredStyle: UIAlertControllerStyle.alert)
+        alertController.addAction(UIAlertAction(title: "Dismiss", style: UIAlertActionStyle.default,handler: nil))
+        
+        self.present(alertController, animated: true, completion: nil)
+    }
+    
+    func webView(_ webView: UIWebView, didFailLoadWithError error: Error) {
+        UIApplication.shared.isNetworkActivityIndicatorVisible = false
+    }
 }
+
 

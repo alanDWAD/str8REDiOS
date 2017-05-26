@@ -4,6 +4,8 @@
 <dict>
 	<key>CFBundleDevelopmentRegion</key>
 	<string>en</string>
+	<key>CFBundleDisplayName</key>
+	<string>str8RED</string>
 	<key>CFBundleExecutable</key>
 	<string>$(EXECUTABLE_NAME)</string>
 	<key>CFBundleIdentifier</key>
@@ -35,7 +37,7 @@
 			<key>Style</key>
 			<string>UIBarStyleDefault</string>
 			<key>Translucent</key>
-			<false/>
+			<true/>
 		</dict>
 	</dict>
 	<key>UISupportedInterfaceOrientations</key>

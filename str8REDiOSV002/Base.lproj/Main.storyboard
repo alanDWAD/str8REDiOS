@@ -10,7 +10,7 @@
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
-        <!--Select Teams-->
+        <!--How to Play-->
         <scene sceneID="hNz-n2-bh7">
             <objects>
                 <viewController id="9pv-A4-QxB" customClass="FirstViewController" customModule="str8REDiOSV002" customModuleProvider="target" sceneMemberID="viewController">
@@ -44,7 +44,7 @@
                             <constraint firstAttribute="trailingMargin" secondItem="zGX-S6-9Ya" secondAttribute="trailing" constant="-16" id="m59-OF-IDC"/>
                         </constraints>
                     </view>
-                    <tabBarItem key="tabBarItem" title="Select Teams" image="first" id="acW-dT-cKf"/>
+                    <tabBarItem key="tabBarItem" title="How to Play" image="first" id="acW-dT-cKf"/>
                     <connections>
                         <outlet property="webView" destination="zGX-S6-9Ya" id="SAR-nf-1rs"/>
                     </connections>
@@ -53,7 +53,7 @@
             </objects>
             <point key="canvasLocation" x="775" y="-525"/>
         </scene>
-        <!--Leaderboards-->
+        <!--Settings-->
         <scene sceneID="wg7-f3-ORb">
             <objects>
                 <viewController id="8rJ-Kc-sve" customClass="SecondViewController" customModule="str8REDiOSV002" customModuleProvider="target" sceneMemberID="viewController">
@@ -64,24 +64,9 @@
                     <view key="view" contentMode="scaleToFill" id="QS5-Rx-YEW">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <subviews>
-                            <webView contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="nN2-Ct-zRT">
-                                <rect key="frame" x="0.0" y="28" width="375" height="590"/>
-                                <color key="backgroundColor" red="0.36078431370000003" green="0.38823529410000002" blue="0.4039215686" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                            </webView>
-                        </subviews>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                        <constraints>
-                            <constraint firstItem="Djb-ko-YwX" firstAttribute="top" secondItem="nN2-Ct-zRT" secondAttribute="bottom" id="NdT-pr-Azf"/>
-                            <constraint firstItem="nN2-Ct-zRT" firstAttribute="leading" secondItem="QS5-Rx-YEW" secondAttribute="leadingMargin" constant="-16" id="XYH-cn-cYD"/>
-                            <constraint firstAttribute="trailingMargin" secondItem="nN2-Ct-zRT" secondAttribute="trailing" constant="-16" id="hhY-h6-2Sb"/>
-                            <constraint firstItem="nN2-Ct-zRT" firstAttribute="top" secondItem="L7p-HK-0SC" secondAttribute="bottom" constant="8" id="uTQ-Bq-nQ9"/>
-                        </constraints>
                     </view>
-                    <tabBarItem key="tabBarItem" title="Leaderboards" image="first" id="cPa-gy-q4n"/>
-                    <connections>
-                        <outlet property="webView" destination="nN2-Ct-zRT" id="I4a-6G-hJD"/>
-                    </connections>
+                    <tabBarItem key="tabBarItem" title="Settings" image="first" id="cPa-gy-q4n"/>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="4Nw-L8-lE0" sceneMemberID="firstResponder"/>
             </objects>
@@ -132,7 +117,7 @@
                             <constraint firstItem="tlH-8U-GlC" firstAttribute="leading" secondItem="6Cn-if-s17" secondAttribute="leadingMargin" constant="-16" id="frr-NA-8Io"/>
                         </constraints>
                     </view>
-                    <tabBarItem key="tabBarItem" title="News" image="first" id="W48-az-zif"/>
+                    <tabBarItem key="tabBarItem" title="Play str8RED" image="first" id="W48-az-zif"/>
                     <connections>
                         <outlet property="webView" destination="tlH-8U-GlC" id="2jP-8Y-2l6"/>
                     </connections>
