@@ -29,25 +29,14 @@
                                 <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <webView contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="zGX-S6-9Ya">
-                                <rect key="frame" x="0.0" y="28" width="375" height="590"/>
-                                <color key="backgroundColor" red="0.36078431370000003" green="0.38823529410000002" blue="0.4039215686" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                            </webView>
                         </subviews>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
                             <constraint firstAttribute="centerX" secondItem="KQZ-1w-vlD" secondAttribute="centerX" id="6BV-lF-sBN"/>
-                            <constraint firstItem="4ug-Mw-9AY" firstAttribute="top" secondItem="zGX-S6-9Ya" secondAttribute="bottom" id="RsZ-OQ-yvQ"/>
-                            <constraint firstItem="zGX-S6-9Ya" firstAttribute="top" secondItem="Ia1-K6-d13" secondAttribute="bottom" constant="8" id="Unx-S1-9Ec"/>
                             <constraint firstAttribute="centerY" secondItem="KQZ-1w-vlD" secondAttribute="centerY" id="exm-UA-ej4"/>
-                            <constraint firstItem="zGX-S6-9Ya" firstAttribute="leading" secondItem="tsR-hK-woN" secondAttribute="leadingMargin" constant="-16" id="jMi-6C-aKE"/>
-                            <constraint firstAttribute="trailingMargin" secondItem="zGX-S6-9Ya" secondAttribute="trailing" constant="-16" id="m59-OF-IDC"/>
                         </constraints>
                     </view>
                     <tabBarItem key="tabBarItem" title="How to Play" image="first" id="acW-dT-cKf"/>
-                    <connections>
-                        <outlet property="webView" destination="zGX-S6-9Ya" id="SAR-nf-1rs"/>
-                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="W5J-7L-Pyd" sceneMemberID="firstResponder"/>
             </objects>
@@ -105,16 +94,34 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <webView contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="tlH-8U-GlC">
-                                <rect key="frame" x="0.0" y="28" width="375" height="590"/>
+                                <rect key="frame" x="0.0" y="28" width="375" height="567"/>
                                 <color key="backgroundColor" red="0.36078431370000003" green="0.38823529410000002" blue="0.4039215686" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                             </webView>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="OrI-ww-Pzu">
+                                <rect key="frame" x="286" y="593" width="73" height="30"/>
+                                <state key="normal" title="FORWARD"/>
+                                <connections>
+                                    <action selector="goForward:" destination="tfq-gC-ToO" eventType="touchUpInside" id="Eqi-8b-0HX"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="b6o-85-9h3">
+                                <rect key="frame" x="16" y="593" width="40" height="30"/>
+                                <state key="normal" title="BACK"/>
+                                <connections>
+                                    <action selector="goBack:" destination="tfq-gC-ToO" eventType="touchUpInside" id="syZ-Ze-tPr"/>
+                                </connections>
+                            </button>
                         </subviews>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <color key="backgroundColor" cocoaTouchSystemColor="groupTableViewBackgroundColor"/>
                         <constraints>
+                            <constraint firstItem="JeE-RS-4Bn" firstAttribute="top" secondItem="OrI-ww-Pzu" secondAttribute="bottom" constant="-5" id="H21-r1-tl6"/>
                             <constraint firstAttribute="trailingMargin" secondItem="tlH-8U-GlC" secondAttribute="trailing" constant="-16" id="OQp-2H-f1Y"/>
-                            <constraint firstItem="JeE-RS-4Bn" firstAttribute="top" secondItem="tlH-8U-GlC" secondAttribute="bottom" id="aFJ-dA-KGv"/>
+                            <constraint firstAttribute="leadingMargin" secondItem="b6o-85-9h3" secondAttribute="leading" id="WgU-EH-amS"/>
+                            <constraint firstItem="JeE-RS-4Bn" firstAttribute="top" secondItem="tlH-8U-GlC" secondAttribute="bottom" constant="23" id="aFJ-dA-KGv"/>
                             <constraint firstItem="tlH-8U-GlC" firstAttribute="top" secondItem="cMq-ks-PaL" secondAttribute="bottom" constant="8" id="e4Q-CL-cpj"/>
                             <constraint firstItem="tlH-8U-GlC" firstAttribute="leading" secondItem="6Cn-if-s17" secondAttribute="leadingMargin" constant="-16" id="frr-NA-8Io"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="OrI-ww-Pzu" secondAttribute="trailing" id="icC-FS-WTg"/>
+                            <constraint firstItem="JeE-RS-4Bn" firstAttribute="top" secondItem="b6o-85-9h3" secondAttribute="bottom" constant="-5" id="ipf-Bm-ANf"/>
                         </constraints>
                     </view>
                     <tabBarItem key="tabBarItem" title="Play str8RED" image="first" id="W48-az-zif"/>

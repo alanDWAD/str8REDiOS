@@ -20,7 +20,22 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplicationLaunchOptionsKey: Any]?) -> Bool {
         // Override point for customization after application launch.
-
+        
+        let topWindow = UIWindow(frame: UIScreen.main.bounds)
+        topWindow.rootViewController = UIViewController()
+        topWindow.windowLevel = UIWindowLevelAlert + 1
+        let defaults = UserDefaults.standard
+        let alert = UIAlertController(title: "APNS", message: defaults.string(forKey: "username"), preferredStyle: .alert)
+        alert.addAction(UIAlertAction(title: NSLocalizedString("OK", comment: "confirm"), style: .cancel, handler: {(_ action: UIAlertAction) -> Void in
+            // continue your work
+            // important to hide the window after work completed.
+            // this also keeps a reference to the window until the action is invoked.
+            topWindow.isHidden = true
+        }))
+        topWindow.makeKeyAndVisible()
+        topWindow.rootViewController?.present(alert, animated: true, completion: { _ in })
+        
+        
         if #available(iOS 10, *) {
             UNUserNotificationCenter.current().requestAuthorization(options:[.badge, .alert, .sound]){ (granted, error) in }
             application.registerForRemoteNotifications()
@@ -66,13 +81,15 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         // Called when the application is about to terminate. Save data if appropriate. See also applicationDidEnterBackground:.
     }
     
+    internal var deviceTokenToPass: String?
+    
     // Called when APNs has assigned the device a unique token
     func application(_ application: UIApplication, didRegisterForRemoteNotificationsWithDeviceToken deviceToken: Data) {
         // Convert token to string
-        let deviceTokenString = deviceToken.reduce("", {$0 + String(format: "%02X", $1)})
+        self.deviceTokenToPass = deviceToken.reduce("", {$0 + String(format: "%02X", $1)})
         
         // Print it to console
-        print("APNs device token: \(deviceTokenString)")
+        print("APNs device token:"+deviceTokenToPass!)
         
         // Persist it in your backend in case it's new
     }
