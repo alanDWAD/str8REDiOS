@@ -27,21 +27,9 @@ class ThirdViewController: UIViewController,UIWebViewDelegate {
         
         webView.delegate = self
         
-        
-        // Do any additional setup after loading the view, typically from a nib.
-        
-        let str8REDURL = URL(string: "https://str8red.com/")
-        let str8REDURLRequest = URLRequest(url: str8REDURL!)
-        self.webView.loadRequest(str8REDURLRequest)
-        
-        
-        
-        
     }
     
     override func viewWillAppear(_ animated: Bool) {
-        
-        // Do we need this duplicate code? My assumption would be that the viewDidLoad func would suffice - GH
         
         let str8REDURL = URL(string: "https://str8red.com/")
         let str8REDURLRequest = URLRequest(url: str8REDURL!)
@@ -62,12 +50,11 @@ class ThirdViewController: UIViewController,UIWebViewDelegate {
     
     func webViewDidFinishLoad(_ webView: UIWebView) {
         UIApplication.shared.isNetworkActivityIndicatorVisible = false
+
+        let appDelegate = UIApplication.shared.delegate as! AppDelegate
+        let deviceToken = appDelegate.deviceTokenToPass
         
-        if webView.request?.url?.absoluteString == "https://str8red.com/welcome/" {
-            
-            let appDelegate = UIApplication.shared.delegate as! AppDelegate
-            let deviceToken = appDelegate.deviceTokenToPass
-        
+        if webView.request?.url?.absoluteString == "https://str8red.com/welcome/" && deviceToken != nil {
             var request = URLRequest(url: URL(string: "https://str8red.com/updateAPNS/")!)
             request.httpMethod = "POST"
             let postString = "devicetoken="+deviceToken!
@@ -90,21 +77,6 @@ class ThirdViewController: UIViewController,UIWebViewDelegate {
             
         }
         
-        
-        
-        
-        // Store
-        // defaults.set(349, forKey: "username")
-
-        // self.webView.stringByEvaluatingJavaScript(from: "userID")
-        
-        // let alertController = UIAlertController(title: "iOScreator", message:
-        //    defaults.string(forKey: "username"), preferredStyle: UIAlertControllerStyle.alert)
-        // alertController.addAction(UIAlertAction(title: "Dismiss", style: UIAlertActionStyle.default,handler: nil))
-        
-        // self.present(alertController, animated: true, completion: nil)
-        
-        // self.webView.stringByEvaluatingJavaScript(from: "myFunction")
         
     }
     
