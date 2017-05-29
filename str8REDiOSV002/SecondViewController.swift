@@ -10,10 +10,43 @@
 import UIKit
 
 class SecondViewController: UIViewController,UIWebViewDelegate {
-
-        
-    var navTitle:String!
     
+    var navTitle:String!
+    var teamSelectNotif = false
+    var kickoffNotif = false
+    var resultsNotif = false
+    var kOSNews = false
+    
+    @IBAction func `switch`(_ sender: UISwitch) {
+        
+        if sender.isOn == true {
+            switch sender.tag {
+            case 1:
+                teamSelectNotif = true
+            case 2:
+                kickoffNotif = true
+            case 3:
+                resultsNotif = true
+            case 4:
+                kOSNews = true
+            default:
+                break
+            }}
+            else if sender.isOn == false {
+                switch sender.tag {
+                case 1:
+                    teamSelectNotif = false
+                case 2:
+                    kickoffNotif = false
+                case 3:
+                    resultsNotif = false
+                case 4:
+                    kOSNews = false
+                default:
+                    break
+            }}
+        }
+
     override func viewDidLoad() {
         super.viewDidLoad()
         
