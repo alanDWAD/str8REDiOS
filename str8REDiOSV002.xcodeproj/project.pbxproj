@@ -36,6 +36,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		B233F31F1EDAE65900D8AF47 /* notification1.caf */ = {isa = PBXFileReference; lastKnownFileType = file; path = notification1.caf; sourceTree = "<group>"; };
 		B2B5E28E1ED5ACD000E461BD /* UserNotifications.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UserNotifications.framework; path = System/Library/Frameworks/UserNotifications.framework; sourceTree = SDKROOT; };
 		B2B860AE1ED596F700D20EA2 /* str8REDiOSV002.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = str8REDiOSV002.entitlements; sourceTree = "<group>"; };
 		B2B8FB181DFAB77100145179 /* str8REDiOSV002.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = str8REDiOSV002.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -91,6 +92,7 @@
 		B2B8FB0F1DFAB77100145179 = {
 			isa = PBXGroup;
 			children = (
+				B233F31F1EDAE65900D8AF47 /* notification1.caf */,
 				B2B8FB1A1DFAB77100145179 /* str8REDiOSV002 */,
 				B2B8FB311DFAB77100145179 /* str8REDiOSV002Tests */,
 				B2B8FB3C1DFAB77100145179 /* str8REDiOSV002UITests */,
