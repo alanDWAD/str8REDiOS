@@ -97,15 +97,6 @@ class SecondViewController: UIViewController,UIWebViewDelegate {
             let str8redpickteamreminder: Int = Int((signinvars?[1])!)!
             let str8redresults: Int = Int((signinvars?[2])!)!
             
-            if str8redpickteamreminder == 1 {
-                self.resultsNotif = true
-            }
-            else {
-                self.resultsNotif = false
-            }
-            
-
-            
             if loggedin == "True" {
                 print(loggedin! + String(str8redpickteamreminder) + String(str8redresults))
             }
