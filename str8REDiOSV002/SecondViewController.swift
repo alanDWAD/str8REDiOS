@@ -8,14 +8,33 @@
 //
 
 import UIKit
+import Foundation
 
 class SecondViewController: UIViewController,UIWebViewDelegate {
     
+
     var navTitle:String!
     var teamSelectNotif = false
-    var kickoffNotif = false
     var resultsNotif = false
-    var kOSNews = false
+    
+    func toggleUpdate(toggle: String, setting: Int) -> String {
+        var request = URLRequest(url: URL(string: "https://str8red.com/toggles/")!)
+        request.httpMethod = "POST"
+        let postString = toggle + "=" + String(setting)
+        request.httpBody = postString.data(using: .utf8)
+        let task = URLSession.shared.dataTask(with: request) { data, response, error in
+            guard let data = data, error == nil else {                                                 // check for fundamental networking error
+                print("error=\(String(describing: error))")
+                return
+            }
+            
+            let responseString = String(data: data, encoding: .utf8)
+            print("responseString = \(String(describing: responseString))")
+        }
+        task.resume()
+        let settings = "Setting Updated"
+        return settings
+    }
     
     @IBAction func `switch`(_ sender: UISwitch) {
         
@@ -23,25 +42,24 @@ class SecondViewController: UIViewController,UIWebViewDelegate {
             switch sender.tag {
             case 1:
                 teamSelectNotif = true
-            case 2:
-                kickoffNotif = true
+                print(toggleUpdate(toggle: "str8redpickteamreminder", setting: 1))
             case 3:
                 resultsNotif = true
-            case 4:
-                kOSNews = true
+                print(toggleUpdate(toggle: "str8redresults", setting: 1))
             default:
                 break
+                
+
+                
             }}
             else if sender.isOn == false {
                 switch sender.tag {
                 case 1:
                     teamSelectNotif = false
-                case 2:
-                    kickoffNotif = false
+                    print(toggleUpdate(toggle: "str8redpickteamreminder", setting: 0))
                 case 3:
                     resultsNotif = false
-                case 4:
-                    kOSNews = false
+                    print(toggleUpdate(toggle: "str8redresults", setting: 0))
                 default:
                     break
             }}
@@ -50,11 +68,13 @@ class SecondViewController: UIViewController,UIWebViewDelegate {
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        self.teamSelectNotif = false
+        
     }
     
     override func viewWillAppear(_ animated: Bool) {
         
-        var request = URLRequest(url: URL(string: "https://str8red.com/iostoggles/")!)
+        var request = URLRequest(url: URL(string: "https://str8red.com/loggedincheck/")!)
         request.httpMethod = "GET"
         let postString = ""
         request.httpBody = postString.data(using: .utf8)
@@ -72,8 +92,22 @@ class SecondViewController: UIViewController,UIWebViewDelegate {
             let responseString = String(data: data, encoding: .utf8)
             print("responseString = \(String(describing: responseString))")
             
-            if responseString == "True" {
-                print("logged in")
+            let signinvars = responseString?.components(separatedBy: " ")
+            let loggedin = signinvars?[0]
+            let str8redpickteamreminder: Int = Int((signinvars?[1])!)!
+            let str8redresults: Int = Int((signinvars?[2])!)!
+            
+            if str8redpickteamreminder == 1 {
+                self.resultsNotif = true
+            }
+            else {
+                self.resultsNotif = false
+            }
+            
+
+            
+            if loggedin == "True" {
+                print(loggedin! + String(str8redpickteamreminder) + String(str8redresults))
             }
                 
             else{
