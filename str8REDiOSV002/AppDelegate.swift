@@ -41,7 +41,11 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
             application.registerForRemoteNotifications(matching: [.badge, .sound, .alert])
         }
         
+        sleep(1)
+        
         return true
+        
+        
     }
 
     func applicationWillResignActive(_ application: UIApplication) {

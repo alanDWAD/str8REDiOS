@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="12120" systemVersion="16E195" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="49e-Tb-3d3">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="12120" systemVersion="16F73" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="49e-Tb-3d3">
     <device id="retina4_7" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
@@ -13,7 +13,7 @@
         <!--Settings-->
         <scene sceneID="wg7-f3-ORb">
             <objects>
-                <viewController id="8rJ-Kc-sve" customClass="SecondViewController" customModule="str8REDiOSV002" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="8rJ-Kc-sve" customClass="SettingsVC" customModule="str8REDiOSV002" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="L7p-HK-0SC"/>
                         <viewControllerLayoutGuide type="bottom" id="Djb-ko-YwX"/>
@@ -22,14 +22,14 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <imageView userInteractionEnabled="NO" alpha="0.5" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="pitch" translatesAutoresizingMaskIntoConstraints="NO" id="tb2-1P-LKI">
+                            <imageView userInteractionEnabled="NO" alpha="0.29999999999999999" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Launch" translatesAutoresizingMaskIntoConstraints="NO" id="tb2-1P-LKI">
                                 <rect key="frame" x="0.0" y="0.0" width="375" height="618"/>
                             </imageView>
-                            <stackView opaque="NO" contentMode="scaleToFill" ambiguous="YES" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="i56-iS-KDa">
-                                <rect key="frame" x="68" y="160" width="239" height="152"/>
+                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="i56-iS-KDa">
+                                <rect key="frame" x="68" y="160" width="239" height="82"/>
                                 <subviews>
-                                    <stackView opaque="NO" contentMode="scaleToFill" ambiguous="YES" axis="vertical" spacing="20" translatesAutoresizingMaskIntoConstraints="NO" id="uHV-X8-d3I">
-                                        <rect key="frame" x="0.0" y="0.0" width="239" height="152"/>
+                                    <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="20" translatesAutoresizingMaskIntoConstraints="NO" id="uHV-X8-d3I">
+                                        <rect key="frame" x="0.0" y="0.0" width="239" height="82"/>
                                         <subviews>
                                             <stackView opaque="NO" contentMode="scaleToFill" spacing="50" translatesAutoresizingMaskIntoConstraints="NO" id="hRL-FN-Wfn">
                                                 <rect key="frame" x="0.0" y="0.0" width="239" height="31"/>
@@ -77,12 +77,6 @@
                                                     <constraint firstAttribute="width" constant="239" id="NkK-fx-jD1"/>
                                                 </constraints>
                                             </stackView>
-                                            <stackView opaque="NO" contentMode="scaleToFill" ambiguous="YES" spacing="30" translatesAutoresizingMaskIntoConstraints="NO" id="i7N-XX-0Ax">
-                                                <rect key="frame" x="0.0" y="102" width="239" height="50"/>
-                                                <constraints>
-                                                    <constraint firstAttribute="width" constant="239" id="H2x-dz-GaW"/>
-                                                </constraints>
-                                            </stackView>
                                         </subviews>
                                     </stackView>
                                 </subviews>
@@ -107,6 +101,10 @@
                         </constraints>
                     </view>
                     <tabBarItem key="tabBarItem" title="Settings" id="cPa-gy-q4n"/>
+                    <connections>
+                        <outlet property="resultsSwitch" destination="EIf-Iu-85X" id="uvC-Qf-J60"/>
+                        <outlet property="teamsSelectedSwitch" destination="q8M-9s-ZNd" id="qpP-DS-PRv"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="4Nw-L8-lE0" sceneMemberID="firstResponder"/>
             </objects>
@@ -185,8 +183,8 @@
         </scene>
     </scenes>
     <resources>
+        <image name="Launch" width="841" height="891"/>
         <image name="first" width="30" height="30"/>
-        <image name="pitch" width="512" height="672"/>
     </resources>
     <color key="tintColor" red="1" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
 </document>
