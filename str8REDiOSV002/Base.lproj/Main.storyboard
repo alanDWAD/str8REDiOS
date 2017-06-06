@@ -100,7 +100,7 @@
                             <constraint firstAttribute="trailing" secondItem="tb2-1P-LKI" secondAttribute="trailing" id="v5T-vd-Epd"/>
                         </constraints>
                     </view>
-                    <tabBarItem key="tabBarItem" title="Settings" id="cPa-gy-q4n"/>
+                    <tabBarItem key="tabBarItem" title="Settings" image="second" id="cPa-gy-q4n"/>
                     <connections>
                         <outlet property="resultsSwitch" destination="EIf-Iu-85X" id="uvC-Qf-J60"/>
                         <outlet property="teamsSelectedSwitch" destination="q8M-9s-ZNd" id="qpP-DS-PRv"/>
@@ -118,7 +118,8 @@
                     <tabBar key="tabBar" contentMode="scaleToFill" id="W28-zg-YXA">
                         <rect key="frame" x="0.0" y="975" width="768" height="49"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMinY="YES"/>
-                        <color key="backgroundColor" red="1" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                        <color key="backgroundColor" red="0.72412639856338501" green="0.81380170583724976" blue="0.3089008629322052" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <color key="barTintColor" red="0.6447414755821228" green="0.76677554845809937" blue="0.24052762985229492" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                     </tabBar>
                     <connections>
                         <segue destination="tfq-gC-ToO" kind="relationship" relationship="viewControllers" id="fJt-Of-lBi"/>
@@ -129,10 +130,10 @@
             </objects>
             <point key="canvasLocation" x="-70" y="398"/>
         </scene>
-        <!--News-->
+        <!--str8RED-->
         <scene sceneID="K72-wV-YLp">
             <objects>
-                <viewController title="News" id="tfq-gC-ToO" customClass="ThirdViewController" customModule="str8REDiOSV002" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController title="str8RED" id="tfq-gC-ToO" customClass="str8REDVC" customModule="str8REDiOSV002" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="cMq-ks-PaL"/>
                         <viewControllerLayoutGuide type="bottom" id="JeE-RS-4Bn"/>
@@ -185,6 +186,7 @@
     <resources>
         <image name="Launch" width="841" height="891"/>
         <image name="first" width="30" height="30"/>
+        <image name="second" width="30" height="30"/>
     </resources>
     <color key="tintColor" red="1" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
 </document>

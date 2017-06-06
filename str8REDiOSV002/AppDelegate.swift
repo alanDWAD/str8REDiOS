@@ -2,16 +2,12 @@
 //  AppDelegate.swift
 //  str8REDiOSV002
 //
-//  Created by Alan Tingey on 09/12/2016.
-//  Copyright © 2017 Alan Tingey. All rights reserved.
+//  Copyright © 2017 Be The Rules. All rights reserved.
 //  Powered by kOS
 //
 
 import UIKit
 import UserNotifications
-
-
-
 
 @UIApplicationMain
 class AppDelegate: UIResponder, UIApplicationDelegate {
@@ -26,26 +22,24 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
             application.registerForRemoteNotifications()
             print("TEST12")
         }
-            // iOS 9 support
-        else if #available(iOS 9, *) {
-            UIApplication.shared.registerUserNotificationSettings(UIUserNotificationSettings(types: [.badge, .sound, .alert], categories: nil))
-            UIApplication.shared.registerForRemoteNotifications()
-        }
-            // iOS 8 support
-        else if #available(iOS 8, *) {
-            UIApplication.shared.registerUserNotificationSettings(UIUserNotificationSettings(types: [.badge, .sound, .alert], categories: nil))
-            UIApplication.shared.registerForRemoteNotifications()
-        }
-            // iOS 7 support
-        else {  
+//            // iOS 9 support
+//        else if #available(iOS 9, *) {
+//            UIApplication.shared.registerUserNotificationSettings(UIUserNotificationSettings(types: [.badge, .sound, .alert], categories: nil))
+//            UIApplication.shared.registerForRemoteNotifications()
+//        }
+//            // iOS 8 support
+//        else if #available(iOS 8, *) {
+//            UIApplication.shared.registerUserNotificationSettings(UIUserNotificationSettings(types: [.badge, .sound, .alert], categories: nil))
+//            UIApplication.shared.registerForRemoteNotifications()
+//        }
+//            // iOS 7 support
+        else {
             application.registerForRemoteNotifications(matching: [.badge, .sound, .alert])
         }
         
         sleep(1)
         
         return true
-        
-        
     }
 
     func applicationWillResignActive(_ application: UIApplication) {
@@ -75,6 +69,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     // Called when APNs has assigned the device a unique token
     func application(_ application: UIApplication, didRegisterForRemoteNotificationsWithDeviceToken deviceToken: Data) {
         // Convert token to string
+        
         self.deviceTokenToPass = deviceToken.reduce("", {$0 + String(format: "%02X", $1)})
         
         // Print it to console

@@ -10,17 +10,17 @@ import UIKit
 import Foundation
 
 class SettingsVC: UIViewController,UIWebViewDelegate {
-    
+
+// Class Variables
     var navTitle:String!
     var teamSelectNotif = false
     var resultsNotif = false
     
+// UI Outlets
     @IBOutlet weak var teamsSelectedSwitch: UISwitch!
     @IBOutlet weak var resultsSwitch: UISwitch!
 
-
-    
-    
+// Class Functions
     func toggleUpdate(toggle: String, setting: Int) -> String {
         var request = URLRequest(url: URL(string: "https://str8red.com/toggles/")!)
         request.httpMethod = "POST"
@@ -40,7 +40,7 @@ class SettingsVC: UIViewController,UIWebViewDelegate {
         return settings
     }
     
-    
+ // UI Actions
     @IBAction func `switch`(_ sender: UISwitch) {
         
         if sender.isOn == true {
@@ -53,10 +53,8 @@ class SettingsVC: UIViewController,UIWebViewDelegate {
                 print(toggleUpdate(toggle: "str8redresults", setting: 1))
             default:
                 break
-                
-
-                
-            }}
+            }
+        }
             else if sender.isOn == false {
                 switch sender.tag {
                 case 1:
@@ -67,11 +65,14 @@ class SettingsVC: UIViewController,UIWebViewDelegate {
                     print(toggleUpdate(toggle: "str8redresults", setting: 0))
                 default:
                     break
-            }}
+                }
+            }
         }
 
+// Superclass Function Overides
     
     override func viewDidLoad() {
+        
         super.viewDidLoad()
 
         var request = URLRequest(url: URL(string: "https://str8red.com/loggedincheck/")!)
@@ -120,8 +121,6 @@ class SettingsVC: UIViewController,UIWebViewDelegate {
             
         }
         task.resume()
-        
-        
     }
     
     

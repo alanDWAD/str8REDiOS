@@ -1,20 +1,18 @@
 //
-//  ThirdViewController.swift
+//  str8REDVC.swift
 //  str8REDiOSV002
 //
-//  Created by Alan Tingey on 09/12/2016.
-//  Copyright © 2017 Alan Tingey. All rights reserved.
-//  Powered by kOS still
+//  Copyright © 2017 Be The Rules. All rights reserved.
+//  Powered by kOS
 //
 
 import UIKit
 
-class ThirdViewController: UIViewController,UIWebViewDelegate {
-    
+class str8REDVC: UIViewController,UIWebViewDelegate {
     
     @IBOutlet weak var webView: UIWebView!
     
-    var navTitle:String!
+    var navTitle:String!  // What does this do? no other references to it in class?
     
     @IBAction func goBack(_ sender: Any) {
         webView.goBack()
