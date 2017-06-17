@@ -1,11 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="12120" systemVersion="16F73" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="49e-Tb-3d3">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="12121" systemVersion="16F73" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="49e-Tb-3d3">
     <device id="retina4_7" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="12088"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="12089"/>
         <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
@@ -63,7 +63,7 @@
                                                         <nil key="textColor"/>
                                                         <nil key="highlightedColor"/>
                                                     </label>
-                                                    <switch opaque="NO" tag="3" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" contentHorizontalAlignment="center" contentVerticalAlignment="center" on="YES" translatesAutoresizingMaskIntoConstraints="NO" id="EIf-Iu-85X">
+                                                    <switch opaque="NO" tag="2" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" contentHorizontalAlignment="center" contentVerticalAlignment="center" on="YES" translatesAutoresizingMaskIntoConstraints="NO" id="EIf-Iu-85X">
                                                         <rect key="frame" x="190" y="0.0" width="51" height="31"/>
                                                         <constraints>
                                                             <constraint firstAttribute="width" constant="49" id="v5a-LG-LNr"/>
@@ -100,9 +100,13 @@
                             <constraint firstAttribute="trailing" secondItem="tb2-1P-LKI" secondAttribute="trailing" id="v5T-vd-Epd"/>
                         </constraints>
                     </view>
-                    <tabBarItem key="tabBarItem" title="Settings" image="second" id="cPa-gy-q4n"/>
+                    <tabBarItem key="tabBarItem" title="Settings" image="settingsBarIcon" selectedImage="settingsBarIcon" id="cPa-gy-q4n">
+                        <offsetWrapper key="titlePositionAdjustment" horizontal="0.0" vertical="0.0"/>
+                    </tabBarItem>
                     <connections>
+                        <outlet property="resultsLabel" destination="hic-SF-KoU" id="f8a-sV-cjq"/>
                         <outlet property="resultsSwitch" destination="EIf-Iu-85X" id="uvC-Qf-J60"/>
+                        <outlet property="teamsSelectedLabel" destination="uLC-9f-JBH" id="0CY-Jg-Tmz"/>
                         <outlet property="teamsSelectedSwitch" destination="q8M-9s-ZNd" id="qpP-DS-PRv"/>
                     </connections>
                 </viewController>
@@ -146,34 +150,37 @@
                                 <rect key="frame" x="0.0" y="28" width="375" height="567"/>
                                 <color key="backgroundColor" red="0.36078431370000003" green="0.38823529410000002" blue="0.4039215686" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                             </webView>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="OrI-ww-Pzu">
-                                <rect key="frame" x="286" y="593" width="73" height="30"/>
-                                <state key="normal" title="FORWARD"/>
-                                <connections>
-                                    <action selector="goForward:" destination="tfq-gC-ToO" eventType="touchUpInside" id="Eqi-8b-0HX"/>
-                                </connections>
-                            </button>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="b6o-85-9h3">
-                                <rect key="frame" x="16" y="593" width="40" height="30"/>
-                                <state key="normal" title="BACK"/>
+                            <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="fill" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="b6o-85-9h3">
+                                <rect key="frame" x="16" y="595" width="9" height="22"/>
+                                <state key="normal" image="backBtn">
+                                    <color key="titleColor" red="1" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                    <color key="titleShadowColor" red="1" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                </state>
                                 <connections>
                                     <action selector="goBack:" destination="tfq-gC-ToO" eventType="touchUpInside" id="syZ-Ze-tPr"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="OrI-ww-Pzu">
+                                <rect key="frame" x="350" y="596.5" width="9" height="22"/>
+                                <state key="normal" image="forwardBtn"/>
+                                <connections>
+                                    <action selector="goForward:" destination="tfq-gC-ToO" eventType="touchUpInside" id="Eqi-8b-0HX"/>
                                 </connections>
                             </button>
                         </subviews>
                         <color key="backgroundColor" cocoaTouchSystemColor="groupTableViewBackgroundColor"/>
                         <constraints>
-                            <constraint firstItem="JeE-RS-4Bn" firstAttribute="top" secondItem="OrI-ww-Pzu" secondAttribute="bottom" constant="-5" id="H21-r1-tl6"/>
+                            <constraint firstItem="JeE-RS-4Bn" firstAttribute="top" secondItem="OrI-ww-Pzu" secondAttribute="bottom" constant="-0.29999999999999999" id="H21-r1-tl6"/>
                             <constraint firstAttribute="trailingMargin" secondItem="tlH-8U-GlC" secondAttribute="trailing" constant="-16" id="OQp-2H-f1Y"/>
                             <constraint firstAttribute="leadingMargin" secondItem="b6o-85-9h3" secondAttribute="leading" id="WgU-EH-amS"/>
                             <constraint firstItem="JeE-RS-4Bn" firstAttribute="top" secondItem="tlH-8U-GlC" secondAttribute="bottom" constant="23" id="aFJ-dA-KGv"/>
                             <constraint firstItem="tlH-8U-GlC" firstAttribute="top" secondItem="cMq-ks-PaL" secondAttribute="bottom" constant="8" id="e4Q-CL-cpj"/>
                             <constraint firstItem="tlH-8U-GlC" firstAttribute="leading" secondItem="6Cn-if-s17" secondAttribute="leadingMargin" constant="-16" id="frr-NA-8Io"/>
                             <constraint firstAttribute="trailingMargin" secondItem="OrI-ww-Pzu" secondAttribute="trailing" id="icC-FS-WTg"/>
-                            <constraint firstItem="JeE-RS-4Bn" firstAttribute="top" secondItem="b6o-85-9h3" secondAttribute="bottom" constant="-5" id="ipf-Bm-ANf"/>
+                            <constraint firstItem="JeE-RS-4Bn" firstAttribute="top" secondItem="b6o-85-9h3" secondAttribute="bottom" constant="-0.80000000000000004" id="ipf-Bm-ANf"/>
                         </constraints>
                     </view>
-                    <tabBarItem key="tabBarItem" title="Play str8RED" image="first" id="W48-az-zif"/>
+                    <tabBarItem key="tabBarItem" title="Play str8RED" image="playBarIcon" selectedImage="playBarIcon" id="W48-az-zif"/>
                     <connections>
                         <outlet property="webView" destination="tlH-8U-GlC" id="2jP-8Y-2l6"/>
                     </connections>
@@ -185,8 +192,10 @@
     </scenes>
     <resources>
         <image name="Launch" width="841" height="891"/>
-        <image name="first" width="30" height="30"/>
-        <image name="second" width="30" height="30"/>
+        <image name="backBtn" width="9" height="15"/>
+        <image name="forwardBtn" width="9" height="15"/>
+        <image name="playBarIcon" width="25" height="25"/>
+        <image name="settingsBarIcon" width="17" height="17"/>
     </resources>
     <color key="tintColor" red="1" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
 </document>
