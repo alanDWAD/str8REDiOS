@@ -41,7 +41,6 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         sleep(1)
         
         let defaults : UserDefaults = UserDefaults.standard
-
         var request = URLRequest(url: URL(string: "https://str8red.com/loggedincheck/")!)
         request.httpMethod = "GET"
         let postString = ""
@@ -51,36 +50,19 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
                 print("error=\(String(describing: error))")
                 return
             }
-            
             if let httpStatus = response as? HTTPURLResponse, httpStatus.statusCode != 200 {           // check for http errors
                 print("statusCode should be 200, but is \(httpStatus.statusCode)")
                 print("response = \(String(describing: response))")
             }
-            
             let responseString = String(data: data, encoding: .utf8)
             print("responseString = \(String(describing: responseString))")
-            
-            
-            
-            
-            
             let signinvars = responseString?.components(separatedBy: " ")
-            let loggedIn = signinvars?[0]
-            let str8redpickteamreminder = signinvars?[1]
-            let str8redresults = signinvars?[2]
-            
             defaults.set(signinvars?[0], forKey: "loggedIn")
             defaults.set(signinvars?[1], forKey: "str8redpickteamreminder")
             defaults.set(signinvars?[2], forKey: "str8redresults")
-            
-
         }
         task.resume()
-
-        
-        
         return true
-
     }
 
      

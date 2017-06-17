@@ -53,6 +53,7 @@ class str8REDVC: UIViewController,UIWebViewDelegate {
         let deviceToken = appDelegate.deviceTokenToPass
         
         if webView.request?.url?.absoluteString == "https://str8red.com/welcome/" && deviceToken != nil {
+            print("Update device token if logged in and using a real device.")
             var request = URLRequest(url: URL(string: "https://str8red.com/updateAPNS/")!)
             request.httpMethod = "POST"
             let postString = "devicetoken="+deviceToken!
@@ -72,10 +73,32 @@ class str8REDVC: UIViewController,UIWebViewDelegate {
                 print("responseString = \(String(describing: responseString))")
             }
             task.resume()
-            
         }
-        
-        
+        if webView.request?.url?.absoluteString == "https://str8red.com/welcome/" {
+            print("Now grab user settings.")
+            let defaults : UserDefaults = UserDefaults.standard
+            var request = URLRequest(url: URL(string: "https://str8red.com/loggedincheck/")!)
+            request.httpMethod = "GET"
+            let postString = ""
+            request.httpBody = postString.data(using: .utf8)
+            let task = URLSession.shared.dataTask(with: request) { data, response, error in
+                guard let data = data, error == nil else {                                                 // check for fundamental networking error
+                    print("error=\(String(describing: error))")
+                    return
+                }
+                if let httpStatus = response as? HTTPURLResponse, httpStatus.statusCode != 200 {           // check for http errors
+                    print("statusCode should be 200, but is \(httpStatus.statusCode)")
+                    print("response = \(String(describing: response))")
+                }
+                let responseString = String(data: data, encoding: .utf8)
+                print("now logged in responseString = \(String(describing: responseString))")
+                let signinvars = responseString?.components(separatedBy: " ")
+                defaults.set(signinvars?[0], forKey: "loggedIn")
+                defaults.set(signinvars?[1], forKey: "str8redpickteamreminder")
+                defaults.set(signinvars?[2], forKey: "str8redresults")
+            }
+            task.resume()
+        }
     }
     
     func webView(_ webView: UIWebView, didFailLoadWithError error: Error) {
