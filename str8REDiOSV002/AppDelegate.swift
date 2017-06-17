@@ -10,13 +10,14 @@ import UIKit
 import UserNotifications
 
 @UIApplicationMain
+
 class AppDelegate: UIResponder, UIApplicationDelegate {
 
     var window: UIWindow?
 
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplicationLaunchOptionsKey: Any]?) -> Bool {
         // Override point for customization after application launch.
-        
+
         if #available(iOS 10, *) {
             UNUserNotificationCenter.current().requestAuthorization(options:[.badge, .alert, .sound]){ (granted, error) in }
             application.registerForRemoteNotifications()
@@ -39,9 +40,52 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         
         sleep(1)
         
+        let defaults : UserDefaults = UserDefaults.standard
+
+        var request = URLRequest(url: URL(string: "https://str8red.com/loggedincheck/")!)
+        request.httpMethod = "GET"
+        let postString = ""
+        request.httpBody = postString.data(using: .utf8)
+        let task = URLSession.shared.dataTask(with: request) { data, response, error in
+            guard let data = data, error == nil else {                                                 // check for fundamental networking error
+                print("error=\(String(describing: error))")
+                return
+            }
+            
+            if let httpStatus = response as? HTTPURLResponse, httpStatus.statusCode != 200 {           // check for http errors
+                print("statusCode should be 200, but is \(httpStatus.statusCode)")
+                print("response = \(String(describing: response))")
+            }
+            
+            let responseString = String(data: data, encoding: .utf8)
+            print("responseString = \(String(describing: responseString))")
+            
+            
+            
+            
+            
+            let signinvars = responseString?.components(separatedBy: " ")
+            let loggedIn = signinvars?[0]
+            let str8redpickteamreminder = signinvars?[1]
+            let str8redresults = signinvars?[2]
+            
+            defaults.set(signinvars?[0], forKey: "loggedIn")
+            defaults.set(signinvars?[1], forKey: "str8redpickteamreminder")
+            defaults.set(signinvars?[2], forKey: "str8redresults")
+            
+
+        }
+        task.resume()
+
+        
+        
         return true
+
     }
 
+     
+        
+    
     func applicationWillResignActive(_ application: UIApplication) {
         // Sent when the application is about to move from active to inactive state. This can occur for certain types of temporary interruptions (such as an incoming phone call or SMS message) or when the user quits the application and it begins the transition to the background state.
         // Use this method to pause ongoing tasks, disable timers, and invalidate graphics rendering callbacks. Games should use this method to pause the game.
@@ -70,7 +114,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     func application(_ application: UIApplication, didRegisterForRemoteNotificationsWithDeviceToken deviceToken: Data) {
         // Convert token to string
         
-        self.deviceTokenToPass = deviceToken.reduce("", {$0 + String(format: "%02X", $1)})
+       self.deviceTokenToPass = deviceToken.reduce("", {$0 + String(format: "%02X", $1)})
         
         // Print it to console
         print("APNs device token:"+deviceTokenToPass!)

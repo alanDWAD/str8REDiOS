@@ -106,6 +106,7 @@
                     <connections>
                         <outlet property="resultsLabel" destination="hic-SF-KoU" id="f8a-sV-cjq"/>
                         <outlet property="resultsSwitch" destination="EIf-Iu-85X" id="uvC-Qf-J60"/>
+                        <outlet property="settingsText" destination="fwx-Mq-pFp" id="10r-Yw-tyu"/>
                         <outlet property="teamsSelectedLabel" destination="uLC-9f-JBH" id="0CY-Jg-Tmz"/>
                         <outlet property="teamsSelectedSwitch" destination="q8M-9s-ZNd" id="qpP-DS-PRv"/>
                     </connections>
