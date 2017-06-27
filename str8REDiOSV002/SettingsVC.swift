@@ -22,6 +22,7 @@ class SettingsVC: UIViewController,UIWebViewDelegate {
     @IBOutlet weak var teamsSelectedLabel: UILabel!
     @IBOutlet weak var resultsLabel: UILabel!
     @IBOutlet weak var settingsText: UILabel!
+
     
 
 // Class Functions
