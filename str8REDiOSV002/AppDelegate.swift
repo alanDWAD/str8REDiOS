@@ -41,6 +41,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         sleep(1)
         
         let defaults : UserDefaults = UserDefaults.standard
+        defaults.set(false, forKey: "loginbutton")
         var request = URLRequest(url: URL(string: "https://str8red.com/loggedincheck/")!)
         request.httpMethod = "GET"
         let postString = ""

@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="12121" systemVersion="16F73" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="49e-Tb-3d3">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="12121" systemVersion="16E195" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="49e-Tb-3d3">
     <device id="retina4_7" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
@@ -109,6 +109,7 @@
                         <outlet property="settingsText" destination="fwx-Mq-pFp" id="10r-Yw-tyu"/>
                         <outlet property="teamsSelectedLabel" destination="uLC-9f-JBH" id="0CY-Jg-Tmz"/>
                         <outlet property="teamsSelectedSwitch" destination="q8M-9s-ZNd" id="qpP-DS-PRv"/>
+                        <segue destination="tfq-gC-ToO" kind="show" identifier="str8RED" id="h54-Bt-WBS"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="4Nw-L8-lE0" sceneMemberID="firstResponder"/>
@@ -197,7 +198,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="g31-KD-GFr" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="773.60000000000002" y="807.34632683658174"/>
+            <point key="canvasLocation" x="1308" y="885"/>
         </scene>
     </scenes>
     <resources>
@@ -207,5 +208,8 @@
         <image name="playBarIcon" width="25" height="25"/>
         <image name="settingsBarIcon" width="17" height="17"/>
     </resources>
+    <inferredMetricsTieBreakers>
+        <segue reference="h54-Bt-WBS"/>
+    </inferredMetricsTieBreakers>
     <color key="tintColor" red="1" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
 </document>
