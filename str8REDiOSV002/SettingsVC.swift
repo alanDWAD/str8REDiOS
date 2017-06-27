@@ -3,7 +3,7 @@
 //  str8REDiOSV002
 //
 //  Copyright © 2017 Be The Rules. All rights reserved.
-//  Powered by kOS
+//  
 //
 
 import UIKit
@@ -86,9 +86,9 @@ class SettingsVC: UIViewController,UIWebViewDelegate {
         super.viewDidLoad()
         
         let defaults = UserDefaults.standard
-        print(defaults.string(forKey: "loggedIn"))
-        print(defaults.string(forKey: "str8redpickteamreminder"))
-        print(defaults.string(forKey: "str8redresults"))
+//        print(defaults.string(forKey: "loggedIn"))
+//        print(defaults.string(forKey: "str8redpickteamreminder"))
+//        print(defaults.string(forKey: "str8redresults"))
         
         if defaults.string(forKey: "loggedIn") == "True" {
             self.settingsText.text = "Allow Notifications for:"
@@ -129,9 +129,9 @@ class SettingsVC: UIViewController,UIWebViewDelegate {
     override func viewWillAppear(_ animated: Bool) {
     
     let defaults = UserDefaults.standard
-    print(defaults.string(forKey: "loggedIn"))
-    print(defaults.string(forKey: "str8redpickteamreminder"))
-    print(defaults.string(forKey: "str8redresults"))
+//    print(defaults.string(forKey: "loggedIn"))
+//    print(defaults.string(forKey: "str8redpickteamreminder"))
+//    print(defaults.string(forKey: "str8redresults"))
     
     if defaults.string(forKey: "loggedIn") == "True" {
     self.settingsText.text = "Allow Notifications for:"

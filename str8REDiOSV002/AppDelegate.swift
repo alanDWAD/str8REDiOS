@@ -3,7 +3,7 @@
 //  str8REDiOSV002
 //
 //  Copyright © 2017 Be The Rules. All rights reserved.
-//  Powered by kOS
+//  
 //
 
 import UIKit

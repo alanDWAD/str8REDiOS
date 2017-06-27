@@ -148,11 +148,15 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <webView contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="tlH-8U-GlC">
-                                <rect key="frame" x="0.0" y="28" width="375" height="567"/>
+                                <rect key="frame" x="0.0" y="28" width="375" height="568"/>
                                 <color key="backgroundColor" red="0.36078431370000003" green="0.38823529410000002" blue="0.4039215686" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                             </webView>
-                            <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="fill" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="b6o-85-9h3">
-                                <rect key="frame" x="16" y="595" width="9" height="22"/>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="fill" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="b6o-85-9h3">
+                                <rect key="frame" x="16" y="596" width="9" height="22"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="9" id="Rij-JG-YAh"/>
+                                    <constraint firstAttribute="height" constant="22" id="cqb-rj-teQ"/>
+                                </constraints>
                                 <state key="normal" image="backBtn">
                                     <color key="titleColor" red="1" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                     <color key="titleShadowColor" red="1" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
@@ -162,7 +166,11 @@
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="OrI-ww-Pzu">
-                                <rect key="frame" x="350" y="596.5" width="9" height="22"/>
+                                <rect key="frame" x="350" y="596" width="9" height="22"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="22" id="d6h-Ir-R8U"/>
+                                    <constraint firstAttribute="width" constant="9" id="qRe-Ty-KEd"/>
+                                </constraints>
                                 <state key="normal" image="forwardBtn"/>
                                 <connections>
                                     <action selector="goForward:" destination="tfq-gC-ToO" eventType="touchUpInside" id="Eqi-8b-0HX"/>
@@ -171,14 +179,15 @@
                         </subviews>
                         <color key="backgroundColor" cocoaTouchSystemColor="groupTableViewBackgroundColor"/>
                         <constraints>
-                            <constraint firstItem="JeE-RS-4Bn" firstAttribute="top" secondItem="OrI-ww-Pzu" secondAttribute="bottom" constant="-0.29999999999999999" id="H21-r1-tl6"/>
-                            <constraint firstAttribute="trailingMargin" secondItem="tlH-8U-GlC" secondAttribute="trailing" constant="-16" id="OQp-2H-f1Y"/>
-                            <constraint firstAttribute="leadingMargin" secondItem="b6o-85-9h3" secondAttribute="leading" id="WgU-EH-amS"/>
-                            <constraint firstItem="JeE-RS-4Bn" firstAttribute="top" secondItem="tlH-8U-GlC" secondAttribute="bottom" constant="23" id="aFJ-dA-KGv"/>
-                            <constraint firstItem="tlH-8U-GlC" firstAttribute="top" secondItem="cMq-ks-PaL" secondAttribute="bottom" constant="8" id="e4Q-CL-cpj"/>
-                            <constraint firstItem="tlH-8U-GlC" firstAttribute="leading" secondItem="6Cn-if-s17" secondAttribute="leadingMargin" constant="-16" id="frr-NA-8Io"/>
-                            <constraint firstAttribute="trailingMargin" secondItem="OrI-ww-Pzu" secondAttribute="trailing" id="icC-FS-WTg"/>
-                            <constraint firstItem="JeE-RS-4Bn" firstAttribute="top" secondItem="b6o-85-9h3" secondAttribute="bottom" constant="-0.80000000000000004" id="ipf-Bm-ANf"/>
+                            <constraint firstItem="OrI-ww-Pzu" firstAttribute="top" secondItem="tlH-8U-GlC" secondAttribute="bottom" id="1Ju-EL-zUA"/>
+                            <constraint firstItem="b6o-85-9h3" firstAttribute="leading" secondItem="6Cn-if-s17" secondAttribute="leadingMargin" id="HHa-db-K4e"/>
+                            <constraint firstItem="tlH-8U-GlC" firstAttribute="top" secondItem="cMq-ks-PaL" secondAttribute="bottom" constant="8" id="IVX-uJ-mmW"/>
+                            <constraint firstItem="b6o-85-9h3" firstAttribute="top" secondItem="tlH-8U-GlC" secondAttribute="bottom" id="NGs-ra-cYb"/>
+                            <constraint firstItem="JeE-RS-4Bn" firstAttribute="top" secondItem="OrI-ww-Pzu" secondAttribute="bottom" id="Whe-X9-1KK"/>
+                            <constraint firstItem="tlH-8U-GlC" firstAttribute="leading" secondItem="6Cn-if-s17" secondAttribute="leading" id="d8o-i4-znz"/>
+                            <constraint firstItem="JeE-RS-4Bn" firstAttribute="top" secondItem="b6o-85-9h3" secondAttribute="bottom" id="iqt-Ia-vnP"/>
+                            <constraint firstItem="OrI-ww-Pzu" firstAttribute="trailing" secondItem="6Cn-if-s17" secondAttribute="trailingMargin" id="sRz-Mw-JVw"/>
+                            <constraint firstAttribute="trailing" secondItem="tlH-8U-GlC" secondAttribute="trailing" id="zow-Kt-DkC"/>
                         </constraints>
                     </view>
                     <tabBarItem key="tabBarItem" title="Play str8RED" image="playBarIcon" selectedImage="playBarIcon" id="W48-az-zif"/>
