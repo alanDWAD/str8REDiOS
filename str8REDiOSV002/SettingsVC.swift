@@ -1,6 +1,6 @@
 //
 //  SettingsVC.swift
-//  str8REDiOSV002
+//  str8REDiOS
 //
 //  Copyright © 2017 Be The Rules. All rights reserved.
 //  
@@ -12,7 +12,7 @@ import Foundation
 class SettingsVC: UIViewController,UIWebViewDelegate {
 
 // Class Variables
-    var navTitle:String!
+//  var navTitle:String!
     var teamSelectNotif = false
     var resultsNotif = false
     
@@ -22,8 +22,6 @@ class SettingsVC: UIViewController,UIWebViewDelegate {
     @IBOutlet weak var teamsSelectedLabel: UILabel!
     @IBOutlet weak var resultsLabel: UILabel!
     @IBOutlet weak var settingsText: UILabel!
-
-    
 
 // Class Functions
     func toggleUpdate(toggle: String, setting: Int) -> String {
@@ -124,49 +122,44 @@ class SettingsVC: UIViewController,UIWebViewDelegate {
         
         
     }
-    
 
-    
     override func viewWillAppear(_ animated: Bool) {
-    
-    let defaults = UserDefaults.standard
-//    print(defaults.string(forKey: "loggedIn"))
-//    print(defaults.string(forKey: "str8redpickteamreminder"))
-//    print(defaults.string(forKey: "str8redresults"))
-    
-    if defaults.string(forKey: "loggedIn") == "True" {
-    self.settingsText.text = "Allow Notifications for:"
-    self.teamsSelectedSwitch.isHidden = false
-    self.teamsSelectedLabel.isHidden = false
-    self.resultsSwitch.isHidden = false
-    self.resultsLabel.isHidden = false
-    //print(loggedIn! + String(str8redpickteamreminder!) + String(str8redresults!))
-    }
-    
-    else {
-    self.settingsText.text = "Please sign in to change settings."
-    self.teamsSelectedSwitch.isHidden = true
-    self.teamsSelectedLabel.isHidden = true
-    self.resultsSwitch.isHidden = true
-    self.resultsLabel.isHidden = true
-    print("not logged in")
-    }
-    
-    if defaults.string(forKey: "str8redpickteamreminder") == "True" {
-    self.teamsSelectedSwitch.isOn = true
-    }
-    else {
-    self.teamsSelectedSwitch.isOn = false
-    }
-    if defaults.string(forKey: "str8redresults") == "True" {
-    self.resultsSwitch.isOn = true
-    }
-    else {
-    self.resultsSwitch.isOn = false
-    }
-    
-    
-
+        
+        let defaults = UserDefaults.standard
+        //    print(defaults.string(forKey: "loggedIn"))
+        //    print(defaults.string(forKey: "str8redpickteamreminder"))
+        //    print(defaults.string(forKey: "str8redresults"))
+        
+        if defaults.string(forKey: "loggedIn") == "True" {
+            self.settingsText.text = "Allow Notifications for:"
+            self.teamsSelectedSwitch.isHidden = false
+            self.teamsSelectedLabel.isHidden = false
+            self.resultsSwitch.isHidden = false
+            self.resultsLabel.isHidden = false
+            //print(loggedIn! + String(str8redpickteamreminder!) + String(str8redresults!))
+        }
+            
+        else {
+            self.settingsText.text = "Please sign in to change settings."
+            self.teamsSelectedSwitch.isHidden = true
+            self.teamsSelectedLabel.isHidden = true
+            self.resultsSwitch.isHidden = true
+            self.resultsLabel.isHidden = true
+            print("not logged in")
+        }
+        
+        if defaults.string(forKey: "str8redpickteamreminder") == "True" {
+            self.teamsSelectedSwitch.isOn = true
+        }
+        else {
+            self.teamsSelectedSwitch.isOn = false
+        }
+        if defaults.string(forKey: "str8redresults") == "True" {
+            self.resultsSwitch.isOn = true
+        }
+        else {
+            self.resultsSwitch.isOn = false
+        }
     }
 }
 

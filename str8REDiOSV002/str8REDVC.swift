@@ -1,6 +1,6 @@
 //
 //  str8REDVC.swift
-//  str8REDiOSV002
+//  str8REDiOS
 //
 //  Copyright © 2017 Be The Rules. All rights reserved.
 //  
@@ -12,17 +12,18 @@ class str8REDVC: UIViewController,UIWebViewDelegate {
     
     @IBOutlet weak var webView: UIWebView!
     
-    var navTitle:String!  // What does this do? no other references to it in class?
+//  var navTitle:String!  //What does this do? no other references to it in class?
     
     @IBAction func goBack(_ sender: Any) {
         webView.goBack()
     }
+    
     @IBAction func goForward(_ sender: Any) {
         webView.goForward()
     }
+    
     override func viewDidLoad() {
         super.viewDidLoad()
-        
         webView.delegate = self
         
     }
@@ -30,15 +31,10 @@ class str8REDVC: UIViewController,UIWebViewDelegate {
     override func viewWillAppear(_ animated: Bool) {
         
         let defaults : UserDefaults = UserDefaults.standard
-
-                let str8REDURL = URL(string: "https://str8red.com/")
-                let str8REDURLRequest = URLRequest(url: str8REDURL!)
-                webView.loadRequest(str8REDURLRequest)
-
-            
-            
-
         
+        let str8REDURL = URL(string: "https://str8red.com/")
+        let str8REDURLRequest = URLRequest(url: str8REDURL!)
+        webView.loadRequest(str8REDURLRequest)
     }
     
     func webViewDidStartLoad(_ webView: UIWebView) {
@@ -48,8 +44,6 @@ class str8REDVC: UIViewController,UIWebViewDelegate {
     func postToUrl(url: String, data: Data, completion:(@escaping (Data?, URLResponse?, Error?) -> Void)) {
         var request = URLRequest(url: URL(string: url)!)
         request.httpMethod = "POST"
-        
-
     }
     
     func webViewDidFinishLoad(_ webView: UIWebView) {
@@ -80,6 +74,7 @@ class str8REDVC: UIViewController,UIWebViewDelegate {
             }
             task.resume()
         }
+        
         if webView.request?.url?.absoluteString == "https://str8red.com/welcome/" {
             print("Now grab user settings.")
             let defaults : UserDefaults = UserDefaults.standard
