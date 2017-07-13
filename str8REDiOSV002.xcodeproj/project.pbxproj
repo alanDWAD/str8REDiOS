@@ -8,6 +8,8 @@
 
 /* Begin PBXBuildFile section */
 		B2900F631F0D8A6A00FB384C /* viewleagueVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = B2900F621F0D8A6A00FB384C /* viewleagueVC.swift */; };
+		B2900F691F0F9CED00FB384C /* OverallLeagueVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = B2900F681F0F9CED00FB384C /* OverallLeagueVC.swift */; };
+		B2900F6F1F118FA400FB384C /* LiveLeagueNewVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = B2900F6E1F118FA400FB384C /* LiveLeagueNewVC.swift */; };
 		B2B5E28F1ED5ACD000E461BD /* UserNotifications.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B2B5E28E1ED5ACD000E461BD /* UserNotifications.framework */; settings = {ATTRIBUTES = (Required, ); }; };
 		B2B8FB1C1DFAB77100145179 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = B2B8FB1B1DFAB77100145179 /* AppDelegate.swift */; };
 		B2B8FB201DFAB77100145179 /* SettingsVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = B2B8FB1F1DFAB77100145179 /* SettingsVC.swift */; };
@@ -39,6 +41,8 @@
 /* Begin PBXFileReference section */
 		B233F31F1EDAE65900D8AF47 /* notification1.caf */ = {isa = PBXFileReference; lastKnownFileType = file; name = notification1.caf; path = ../notification1.caf; sourceTree = "<group>"; };
 		B2900F621F0D8A6A00FB384C /* viewleagueVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = viewleagueVC.swift; sourceTree = "<group>"; };
+		B2900F681F0F9CED00FB384C /* OverallLeagueVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = OverallLeagueVC.swift; sourceTree = "<group>"; };
+		B2900F6E1F118FA400FB384C /* LiveLeagueNewVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LiveLeagueNewVC.swift; sourceTree = "<group>"; };
 		B2B5E28E1ED5ACD000E461BD /* UserNotifications.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UserNotifications.framework; path = System/Library/Frameworks/UserNotifications.framework; sourceTree = SDKROOT; };
 		B2B860AE1ED596F700D20EA2 /* str8REDiOSV002.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = str8REDiOSV002.entitlements; sourceTree = "<group>"; };
 		B2B8FB181DFAB77100145179 /* str8REDiOSV002.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = str8REDiOSV002.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -133,6 +137,8 @@
 				B2B8FB241DFAB77100145179 /* Assets.xcassets */,
 				B2B8FB261DFAB77100145179 /* LaunchScreen.storyboard */,
 				B2900F621F0D8A6A00FB384C /* viewleagueVC.swift */,
+				B2900F681F0F9CED00FB384C /* OverallLeagueVC.swift */,
+				B2900F6E1F118FA400FB384C /* LiveLeagueNewVC.swift */,
 			);
 			path = str8REDiOSV002;
 			sourceTree = "<group>";
@@ -296,6 +302,8 @@
 			buildActionMask = 2147483647;
 			files = (
 				B2900F631F0D8A6A00FB384C /* viewleagueVC.swift in Sources */,
+				B2900F691F0F9CED00FB384C /* OverallLeagueVC.swift in Sources */,
+				B2900F6F1F118FA400FB384C /* LiveLeagueNewVC.swift in Sources */,
 				B2B8FB201DFAB77100145179 /* SettingsVC.swift in Sources */,
 				B2B8FB1C1DFAB77100145179 /* AppDelegate.swift in Sources */,
 				B2B8FB4C1DFB258B00145179 /* str8REDVC.swift in Sources */,
