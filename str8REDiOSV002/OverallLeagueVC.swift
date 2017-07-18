@@ -18,7 +18,6 @@ class OverallLeagueVC: UITableViewController {
     
   var players = [Player]()
     
-    
     override func viewDidLoad() {
         super.viewDidLoad()
 
@@ -36,7 +35,6 @@ class OverallLeagueVC: UITableViewController {
                     DispatchQueue.main.async {
                         self.tableView.reloadData()
                     }
-                    
                     
                 } catch let error as NSError {
                     print(error)

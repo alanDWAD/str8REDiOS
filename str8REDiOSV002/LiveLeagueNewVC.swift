@@ -16,10 +16,10 @@ struct Player2 {
 class LiveLeagueNewVC: UITableViewController {
     
     var players = [Player2]()
-
+    
     override func viewDidLoad() {
         super.viewDidLoad()
-
+        
         let urlString = "https://str8red.com/jsonoverallleaderboard/"
         
         let url = URL(string: urlString)
@@ -40,7 +40,6 @@ class LiveLeagueNewVC: UITableViewController {
                     print(error)
                 }
             }
-            
             }.resume()
     }
 

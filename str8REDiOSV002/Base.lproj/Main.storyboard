@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="12121" systemVersion="16E195" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="49e-Tb-3d3">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="12121" systemVersion="16F73" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="49e-Tb-3d3">
     <device id="retina4_7" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
@@ -114,7 +114,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="4Nw-L8-lE0" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="773.60000000000002" y="127.28635682158921"/>
+            <point key="canvasLocation" x="774" y="-467"/>
         </scene>
         <!--Profile-->
         <scene sceneID="Orw-wM-wim">
@@ -143,7 +143,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="8uV-Zf-3sU" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-1152.8" y="436.73163418290858"/>
+            <point key="canvasLocation" x="-918" y="1144"/>
         </scene>
         <!--Tab Bar Controller-->
         <scene sceneID="yl2-sM-qoP">
@@ -171,7 +171,7 @@
         <!--How To Play?-->
         <scene sceneID="cdT-j2-gL1">
             <objects>
-                <viewController id="61u-Uw-VZZ" sceneMemberID="viewController">
+                <viewController id="61u-Uw-VZZ" customClass="howToPlayVC" customModule="str8REDiOSV002" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="x8p-6y-snI"/>
                         <viewControllerLayoutGuide type="bottom" id="XG1-Ev-RDT"/>
@@ -179,13 +179,35 @@
                     <view key="view" contentMode="scaleToFill" id="m6i-iu-FNi">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="str8REDhowToPlay" translatesAutoresizingMaskIntoConstraints="NO" id="OCI-k6-mdb">
+                                <rect key="frame" x="5" y="85" width="365" height="522"/>
+                            </imageView>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="str8RED" translatesAutoresizingMaskIntoConstraints="NO" id="HDS-NU-Yiv">
+                                <rect key="frame" x="87.5" y="35" width="200" height="20"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="200" id="dyU-Y2-ZH3"/>
+                                    <constraint firstAttribute="height" constant="20" id="zc3-Uu-n4e"/>
+                                </constraints>
+                            </imageView>
+                        </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="OCI-k6-mdb" firstAttribute="centerX" secondItem="m6i-iu-FNi" secondAttribute="centerX" id="10K-Ut-fe3"/>
+                            <constraint firstAttribute="trailing" secondItem="OCI-k6-mdb" secondAttribute="trailing" constant="5" id="7PH-XT-sFU"/>
+                            <constraint firstItem="OCI-k6-mdb" firstAttribute="top" secondItem="HDS-NU-Yiv" secondAttribute="bottom" constant="30" id="Azf-6A-op9"/>
+                            <constraint firstAttribute="bottom" secondItem="OCI-k6-mdb" secondAttribute="bottom" constant="60" id="PQb-U2-U7q"/>
+                            <constraint firstItem="HDS-NU-Yiv" firstAttribute="top" secondItem="x8p-6y-snI" secondAttribute="bottom" constant="15" id="Qca-mV-f9z"/>
+                            <constraint firstItem="HDS-NU-Yiv" firstAttribute="centerX" secondItem="m6i-iu-FNi" secondAttribute="centerX" id="SUi-GQ-3Ka"/>
+                            <constraint firstItem="OCI-k6-mdb" firstAttribute="leading" secondItem="m6i-iu-FNi" secondAttribute="leading" constant="5" id="gUi-pZ-ZSb"/>
+                            <constraint firstItem="OCI-k6-mdb" firstAttribute="centerX" secondItem="m6i-iu-FNi" secondAttribute="centerX" id="ogE-pp-FaL"/>
+                        </constraints>
                     </view>
                     <tabBarItem key="tabBarItem" title="How To Play?" id="uIg-sd-N6N"/>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="TNK-Aa-HL6" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-375" y="1144"/>
+            <point key="canvasLocation" x="-71.200000000000003" y="1143.7781109445277"/>
         </scene>
         <!--View Leagues-->
         <scene sceneID="ttZ-PL-kIT">
@@ -250,7 +272,7 @@
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="gkZ-0J-cQe" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1212" y="1146.4767616191905"/>
+            <point key="canvasLocation" x="1953" y="1144"/>
         </scene>
         <!--Live League NewVC-->
         <scene sceneID="HbJ-Gw-Sy6">
@@ -287,7 +309,7 @@
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="KmA-qU-CEn" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1049" y="1950"/>
+            <point key="canvasLocation" x="1522" y="1906"/>
         </scene>
         <!--Overall LeagueVC-->
         <scene sceneID="Qot-Ot-rU8">
@@ -331,7 +353,7 @@
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Fha-PL-abW" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2048.8000000000002" y="1587.256371814093"/>
+            <point key="canvasLocation" x="2359" y="1906"/>
         </scene>
         <!--str8RED-->
         <scene sceneID="K72-wV-YLp">
@@ -394,7 +416,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="g31-KD-GFr" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-642" y="-313"/>
+            <point key="canvasLocation" x="774" y="397"/>
         </scene>
         <!--View Leagues-->
         <scene sceneID="uyv-Sm-CyQ">
@@ -413,7 +435,7 @@
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Kbv-EO-Ygm" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="272.80000000000001" y="1146.4767616191905"/>
+            <point key="canvasLocation" x="774" y="1144"/>
         </scene>
     </scenes>
     <resources>
@@ -422,6 +444,8 @@
         <image name="forwardBtn" width="9" height="15"/>
         <image name="playBarIcon" width="25" height="25"/>
         <image name="settingsBarIcon" width="17" height="17"/>
+        <image name="str8RED" width="1930" height="284"/>
+        <image name="str8REDhowToPlay" width="1086" height="1605"/>
     </resources>
     <inferredMetricsTieBreakers>
         <segue reference="h54-Bt-WBS"/>
