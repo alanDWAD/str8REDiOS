@@ -32,7 +32,7 @@ class str8REDVC: UIViewController,UIWebViewDelegate {
         
         let defaults : UserDefaults = UserDefaults.standard
         
-        let str8REDURL = URL(string: "https://str8red.com/")
+        let str8REDURL = URL(string: "https://str8red.com/iOS")
         let str8REDURLRequest = URLRequest(url: str8REDURL!)
         webView.loadRequest(str8REDURLRequest)
     }
