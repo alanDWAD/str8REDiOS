@@ -21,7 +21,7 @@ class OverallLeagueVC: UITableViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        let urlString = "https://str8red.com/jsonoverallleaderboard/"
+        let urlString = "https://str8red.com/jsonoverallleaderboard/1025/"
         
         let url = URL(string: urlString)
         URLSession.shared.dataTask(with:url!) { (data, response, error) in
@@ -68,7 +68,7 @@ class OverallLeagueVC: UITableViewController {
         
         let player = self.players[indexPath.row]
         cell.textLabel?.text = player.name
-        cell.detailTextLabel?.text = player.score
+        cell.detailTextLabel?.text = NumberFormatter.localizedString(from: NSNumber(value: Int(player.score)!), number: NumberFormatter.Style.decimal)
 
         return cell
     }

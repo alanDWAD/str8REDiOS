@@ -20,7 +20,7 @@ class LiveLeagueNewVC: UITableViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        let urlString = "https://str8red.com/jsonoverallleaderboard/"
+        let urlString = "https://str8red.com/jsonoverallleaderboard/1025/"
         
         let url = URL(string: urlString)
         URLSession.shared.dataTask(with:url!) { (data, response, error) in
