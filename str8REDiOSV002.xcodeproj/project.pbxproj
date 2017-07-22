@@ -12,6 +12,7 @@
 		B2900F691F0F9CED00FB384C /* OverallLeagueVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = B2900F681F0F9CED00FB384C /* OverallLeagueVC.swift */; };
 		B2900F6F1F118FA400FB384C /* LiveLeagueNewVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = B2900F6E1F118FA400FB384C /* LiveLeagueNewVC.swift */; };
 		B2AD9E071F1B807500EE2D1F /* profileVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = B2AD9E061F1B807500EE2D1F /* profileVC.swift */; };
+		B2AD9E091F23118C00EE2D1F /* HistoricLeagueVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = B2AD9E081F23118C00EE2D1F /* HistoricLeagueVC.swift */; };
 		B2B5E28F1ED5ACD000E461BD /* UserNotifications.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B2B5E28E1ED5ACD000E461BD /* UserNotifications.framework */; settings = {ATTRIBUTES = (Required, ); }; };
 		B2B8FB1C1DFAB77100145179 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = B2B8FB1B1DFAB77100145179 /* AppDelegate.swift */; };
 		B2B8FB201DFAB77100145179 /* SettingsVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = B2B8FB1F1DFAB77100145179 /* SettingsVC.swift */; };
@@ -47,6 +48,7 @@
 		B2900F681F0F9CED00FB384C /* OverallLeagueVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = OverallLeagueVC.swift; sourceTree = "<group>"; };
 		B2900F6E1F118FA400FB384C /* LiveLeagueNewVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LiveLeagueNewVC.swift; sourceTree = "<group>"; };
 		B2AD9E061F1B807500EE2D1F /* profileVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = profileVC.swift; sourceTree = "<group>"; };
+		B2AD9E081F23118C00EE2D1F /* HistoricLeagueVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HistoricLeagueVC.swift; sourceTree = "<group>"; };
 		B2B5E28E1ED5ACD000E461BD /* UserNotifications.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UserNotifications.framework; path = System/Library/Frameworks/UserNotifications.framework; sourceTree = SDKROOT; };
 		B2B860AE1ED596F700D20EA2 /* str8REDiOSV002.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = str8REDiOSV002.entitlements; sourceTree = "<group>"; };
 		B2B8FB181DFAB77100145179 /* str8REDiOSV002.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = str8REDiOSV002.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -143,6 +145,7 @@
 				B2B8FB261DFAB77100145179 /* LaunchScreen.storyboard */,
 				B2900F621F0D8A6A00FB384C /* viewleagueVC.swift */,
 				B2900F681F0F9CED00FB384C /* OverallLeagueVC.swift */,
+				B2AD9E081F23118C00EE2D1F /* HistoricLeagueVC.swift */,
 				B2900F6E1F118FA400FB384C /* LiveLeagueNewVC.swift */,
 				B2AD9E061F1B807500EE2D1F /* profileVC.swift */,
 			);
@@ -311,6 +314,7 @@
 				B2900F691F0F9CED00FB384C /* OverallLeagueVC.swift in Sources */,
 				B2900F6F1F118FA400FB384C /* LiveLeagueNewVC.swift in Sources */,
 				B2AD9E071F1B807500EE2D1F /* profileVC.swift in Sources */,
+				B2AD9E091F23118C00EE2D1F /* HistoricLeagueVC.swift in Sources */,
 				5E180F511F1E209000D238A8 /* howToPlayVC.swift in Sources */,
 				B2B8FB201DFAB77100145179 /* SettingsVC.swift in Sources */,
 				B2B8FB1C1DFAB77100145179 /* AppDelegate.swift in Sources */,
