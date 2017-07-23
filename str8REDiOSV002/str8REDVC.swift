@@ -52,8 +52,9 @@ class str8REDVC: UIViewController,UIWebViewDelegate {
         let appDelegate = UIApplication.shared.delegate as! AppDelegate
         let deviceToken = appDelegate.deviceTokenToPass
         
-        if webView.request?.url?.absoluteString == "https://str8red.com/welcome/" && deviceToken != nil {
+        if webView.request?.url?.absoluteString == "https://str8red.com/selectteamsiOS/0/0/" && deviceToken != nil {
             print("Update device token if logged in and using a real device.")
+            print(deviceToken)
             var request = URLRequest(url: URL(string: "https://str8red.com/updateAPNS/")!)
             request.httpMethod = "POST"
             let postString = "devicetoken="+deviceToken!
@@ -75,7 +76,7 @@ class str8REDVC: UIViewController,UIWebViewDelegate {
             task.resume()
         }
         
-        if webView.request?.url?.absoluteString == "https://str8red.com/welcome/" {
+        if webView.request?.url?.absoluteString == "https://str8red.com/selectteamsiOS/0/0/" {
             print("Now grab user settings.")
             let defaults : UserDefaults = UserDefaults.standard
             var request = URLRequest(url: URL(string: "https://str8red.com/loggedincheck/")!)

@@ -7,12 +7,38 @@
 //
 
 import UIKit
+import SDWebImage
+
+extension String
+{
+    func replacingLastOccurrenceOfString(_ searchString: String,
+                                         with replacementString: String,
+                                         caseInsensitive: Bool = true) -> String
+    {
+        let options: String.CompareOptions
+        if caseInsensitive {
+            options = [.backwards, .caseInsensitive]
+        } else {
+            options = [.backwards]
+        }
+        
+        if let range = self.range(of: searchString,
+                                  options: options,
+                                  range: nil,
+                                  locale: nil) {
+            
+            return self.replacingCharacters(in: range, with: replacementString)
+        }
+        return self
+    }
+}
 
 
 
 struct Player {
     let name : String
     var score : String
+    let avatar : String
 }
 
 
@@ -32,7 +58,7 @@ class OverallLeagueVC: UITableViewController {
             } else {
                 do {
                     let parsedData = try JSONSerialization.jsonObject(with: data!) as! [[String]]
-                    self.players = parsedData.map { Player(name: $0[0], score: $0[1]) }
+                    self.players = parsedData.map { Player(name: $0[0], score: $0[1], avatar: $0[2]) }
                     print(self.players.count)
                     DispatchQueue.main.async {
                         self.tableView.reloadData()
@@ -63,10 +89,9 @@ class OverallLeagueVC: UITableViewController {
         
         
         if self.players.count == 0 {
-            return self.players.count
-        }
+            return 1        }
         else {
-            return 1
+            return self.players.count
         }
     }
 
@@ -75,15 +100,27 @@ class OverallLeagueVC: UITableViewController {
         
         let cell = tableView.dequeueReusableCell(withIdentifier: "LabelCell", for: indexPath)
         
+        if self.players.count == 0 {
+            cell.textLabel?.text = "No results for current season."
+            cell.detailTextLabel?.text = ""
+            cell.imageView?.image = UIImage(named: "noLeagueData")
+        }
+        else {
+        
         let player = self.players[indexPath.row]
         cell.textLabel?.text = player.name
         cell.detailTextLabel?.text = NumberFormatter.localizedString(from: NSNumber(value: Int(player.score)!), number: NumberFormatter.Style.decimal)
+        let rawUrl = player.avatar
+        let result = rawUrl.replacingLastOccurrenceOfString("/", with: "/resized/200/")
+        let imageUrl = NSURL(string:"https://str8red.com/resources/" + result)
+            cell.imageView?.sd_setImage(with: imageUrl! as URL, placeholderImage: UIImage(named: "redcard.jpg"))
+        }
 
         return cell
     }
     
     override func tableView(_ tableView: UITableView, titleForHeaderInSection section: Int) -> String? {
-        return "Overall Leaderboard:"
+        return "2017/18 Leaderboard:"
     }
     
 

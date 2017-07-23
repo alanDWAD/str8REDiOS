@@ -7,10 +7,12 @@
 //
 
 import UIKit
+import SDWebImage
 
 struct Player3 {
     let name : String
     var score : String
+    let avatar : String
 }
 
 class HistoricLeagueVC: UITableViewController {
@@ -19,6 +21,8 @@ class HistoricLeagueVC: UITableViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        
         
         let urlString = "https://str8red.com/jsonoverallleaderboard/1025/"
         
@@ -29,7 +33,7 @@ class HistoricLeagueVC: UITableViewController {
             } else {
                 do {
                     let parsedData = try JSONSerialization.jsonObject(with: data!) as! [[String]]
-                    self.players = parsedData.map { Player3(name: $0[0], score: $0[1]) }
+                    self.players = parsedData.map { Player3(name: $0[0], score: $0[1], avatar: $0[2]) }
                     print(self.players.count)
                     DispatchQueue.main.async {
                         self.tableView.reloadData()
@@ -61,6 +65,8 @@ class HistoricLeagueVC: UITableViewController {
     }
     
     
+    
+    
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         
         let cell = tableView.dequeueReusableCell(withIdentifier: "LabelCell", for: indexPath)
@@ -68,12 +74,21 @@ class HistoricLeagueVC: UITableViewController {
         let player = self.players[indexPath.row]
         cell.textLabel?.text = player.name
         cell.detailTextLabel?.text = NumberFormatter.localizedString(from: NSNumber(value: Int(player.score)!), number: NumberFormatter.Style.decimal)
+        // cell.imageView?.image = UIImage(named: "noLeagueData")
+        
+        let rawUrl = player.avatar
+        let result = rawUrl.replacingLastOccurrenceOfString("/", with: "/resized/200/")
+        
+        let imageUrl = NSURL(string:"https://str8red.com/resources/" + result)
+        
+        
+        cell.imageView?.sd_setImage(with: imageUrl! as URL, placeholderImage: UIImage(named: "placeHolder.png"))
         
         return cell
     }
     
     override func tableView(_ tableView: UITableView, titleForHeaderInSection section: Int) -> String? {
-        return "Overall Leaderboard:"
+        return "2016/17 Leaderboard:"
     }
     
     
