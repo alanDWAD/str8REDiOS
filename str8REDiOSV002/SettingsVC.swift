@@ -104,7 +104,7 @@ class SettingsVC: UIViewController,UIWebViewDelegate {
             self.teamsSelectedLabel.isHidden = true
             self.resultsSwitch.isHidden = true
             self.resultsLabel.isHidden = true
-            print("not logged in")
+            //print("not logged in")
         }
         
         if defaults.string(forKey: "str8redpickteamreminder") == "True" {
