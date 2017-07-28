@@ -1,11 +1,12 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="12121" systemVersion="16E195" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="49e-Tb-3d3">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="12121" systemVersion="16G29" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="49e-Tb-3d3">
     <device id="retina4_7" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="12089"/>
+        <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
@@ -154,7 +155,6 @@
                                 </state>
                                 <connections>
                                     <action selector="back:" destination="IVO-86-bQx" eventType="touchUpInside" id="Ndg-pD-4Tx"/>
-                                    <action selector="goBack:" destination="tfq-gC-ToO" eventType="touchUpInside" id="smr-cb-nZ2"/>
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="1ud-gk-Yiz">
@@ -166,7 +166,6 @@
                                 <state key="normal" image="forwardBtn"/>
                                 <connections>
                                     <action selector="forward:" destination="IVO-86-bQx" eventType="touchUpInside" id="ioO-ed-lsi"/>
-                                    <action selector="goForward:" destination="tfq-gC-ToO" eventType="touchUpInside" id="M23-he-sMN"/>
                                 </connections>
                             </button>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Please Sign In to" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ECg-uW-0FQ">
@@ -568,7 +567,7 @@
             </objects>
             <point key="canvasLocation" x="2230" y="1906"/>
         </scene>
-        <!--View Leagues-->
+        <!--Leaderboards-->
         <scene sceneID="uyv-Sm-CyQ">
             <objects>
                 <navigationController automaticallyAdjustsScrollViewInsets="NO" id="Bfs-Ue-Bp0" sceneMemberID="viewController">
@@ -590,6 +589,8 @@
     </scenes>
     <resources>
         <image name="Launch" width="841" height="891"/>
+        <image name="backBtn" width="9" height="15"/>
+        <image name="forwardBtn" width="9" height="15"/>
         <image name="settingsBarIcon" width="17" height="17"/>
         <image name="str8RED" width="1930" height="284"/>
         <image name="str8REDhowToPlay" width="1081" height="1593"/>
