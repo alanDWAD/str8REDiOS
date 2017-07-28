@@ -99,7 +99,7 @@ class SettingsVC: UIViewController,UIWebViewDelegate {
         }
             
         else {
-            self.settingsText.text = "Please sign in to change settings."
+            self.settingsText.text = "Please sign in to"
             self.teamsSelectedSwitch.isHidden = true
             self.teamsSelectedLabel.isHidden = true
             self.resultsSwitch.isHidden = true
