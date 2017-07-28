@@ -1,0 +1,9 @@
+//
+//  Debug.xcconfig
+//  str8REDiOSV002
+//
+//  Created by Alan Tingey on 24/05/2017.
+//  Copyright © 2017 Alan Tingey. All rights reserved.
+//
+
+BUNDLE_ID = io.example.app
