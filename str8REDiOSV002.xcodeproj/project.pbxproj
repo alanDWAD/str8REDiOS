@@ -10,8 +10,10 @@
 		3A103A06ECAA44713ED2F717 /* Pods_str8REDiOSV002Tests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1838BBB4B4BC7C3673BAFAEB /* Pods_str8REDiOSV002Tests.framework */; };
 		5E180F511F1E209000D238A8 /* howToPlayVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5E180F501F1E209000D238A8 /* howToPlayVC.swift */; };
 		A1D6BF9AC8D21BC0024570B5 /* Pods_str8REDiOSV002.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A3507559AA8F177011C3781A /* Pods_str8REDiOSV002.framework */; };
+		B26201D31F27CF6200C3C86D /* PageViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B26201D21F27CF6200C3C86D /* PageViewController.swift */; };
 		B2900F631F0D8A6A00FB384C /* viewleagueVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = B2900F621F0D8A6A00FB384C /* viewleagueVC.swift */; };
 		B2900F691F0F9CED00FB384C /* OverallLeagueVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = B2900F681F0F9CED00FB384C /* OverallLeagueVC.swift */; };
+		B29EE0E91F293150004F7B3E /* FixturesVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = B29EE0E81F293150004F7B3E /* FixturesVC.swift */; };
 		B2AD9E071F1B807500EE2D1F /* profileVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = B2AD9E061F1B807500EE2D1F /* profileVC.swift */; };
 		B2AD9E091F23118C00EE2D1F /* HistoricLeagueVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = B2AD9E081F23118C00EE2D1F /* HistoricLeagueVC.swift */; };
 		B2B5E28F1ED5ACD000E461BD /* UserNotifications.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B2B5E28E1ED5ACD000E461BD /* UserNotifications.framework */; settings = {ATTRIBUTES = (Required, ); }; };
@@ -53,8 +55,10 @@
 		9D52CB7D94BAF86194848F04 /* Pods-str8REDiOSV002UITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-str8REDiOSV002UITests.release.xcconfig"; path = "Pods/Target Support Files/Pods-str8REDiOSV002UITests/Pods-str8REDiOSV002UITests.release.xcconfig"; sourceTree = "<group>"; };
 		A3507559AA8F177011C3781A /* Pods_str8REDiOSV002.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_str8REDiOSV002.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		B233F31F1EDAE65900D8AF47 /* notification1.caf */ = {isa = PBXFileReference; lastKnownFileType = file; name = notification1.caf; path = ../notification1.caf; sourceTree = "<group>"; };
+		B26201D21F27CF6200C3C86D /* PageViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PageViewController.swift; sourceTree = "<group>"; };
 		B2900F621F0D8A6A00FB384C /* viewleagueVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = viewleagueVC.swift; sourceTree = "<group>"; };
 		B2900F681F0F9CED00FB384C /* OverallLeagueVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = OverallLeagueVC.swift; sourceTree = "<group>"; };
+		B29EE0E81F293150004F7B3E /* FixturesVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FixturesVC.swift; sourceTree = "<group>"; };
 		B2AD9E061F1B807500EE2D1F /* profileVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = profileVC.swift; sourceTree = "<group>"; };
 		B2AD9E081F23118C00EE2D1F /* HistoricLeagueVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HistoricLeagueVC.swift; sourceTree = "<group>"; };
 		B2B5E28E1ED5ACD000E461BD /* UserNotifications.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UserNotifications.framework; path = System/Library/Frameworks/UserNotifications.framework; sourceTree = SDKROOT; };
@@ -170,6 +174,8 @@
 				B2B8FB1F1DFAB77100145179 /* SettingsVC.swift */,
 				B2B8FB4B1DFB258B00145179 /* str8REDVC.swift */,
 				B2B8FB211DFAB77100145179 /* Main.storyboard */,
+				B29EE0E81F293150004F7B3E /* FixturesVC.swift */,
+				B26201D21F27CF6200C3C86D /* PageViewController.swift */,
 				5E180F501F1E209000D238A8 /* howToPlayVC.swift */,
 				B2B8FB241DFAB77100145179 /* Assets.xcassets */,
 				B2B8FB261DFAB77100145179 /* LaunchScreen.storyboard */,
@@ -489,9 +495,11 @@
 				B2900F631F0D8A6A00FB384C /* viewleagueVC.swift in Sources */,
 				B2900F691F0F9CED00FB384C /* OverallLeagueVC.swift in Sources */,
 				B2AD9E071F1B807500EE2D1F /* profileVC.swift in Sources */,
+				B29EE0E91F293150004F7B3E /* FixturesVC.swift in Sources */,
 				B2AD9E091F23118C00EE2D1F /* HistoricLeagueVC.swift in Sources */,
 				5E180F511F1E209000D238A8 /* howToPlayVC.swift in Sources */,
 				B2B8FB201DFAB77100145179 /* SettingsVC.swift in Sources */,
+				B26201D31F27CF6200C3C86D /* PageViewController.swift in Sources */,
 				B2B8FB1C1DFAB77100145179 /* AppDelegate.swift in Sources */,
 				B2B8FB4C1DFB258B00145179 /* str8REDVC.swift in Sources */,
 			);
